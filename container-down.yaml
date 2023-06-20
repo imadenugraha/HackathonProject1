@@ -1,0 +1,13 @@
+---
+- name: Drop Container and Remove Image
+  hosts: production-srv
+  become: yes
+
+  tasks:
+  - name: Drop the container
+    ansible.builtin.shell:
+      chdir: /home/Simple-Go-Web
+      cmd: docker-compose down
+
+  - name: Remove Image
+    ansible.builtin.shell: docker rmi go-web:v1

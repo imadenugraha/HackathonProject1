@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    image: go-web:v1
+    ports:
+      - "8000:8000"
+    container_name: go-web
